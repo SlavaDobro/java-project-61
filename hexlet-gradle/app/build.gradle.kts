@@ -1,5 +1,10 @@
 plugins {
-    id("java")
+    java
+    application
+}
+
+application {
+    mainClass.set("hexlet.code.App")
 }
 
 group = "hexlet.code"
@@ -16,4 +21,10 @@ dependencies {
 
 tasks.test {
     useJUnitPlatform()
+}
+
+tasks.jar {
+    manifest {
+        attributes["Main-Class"] = "hexlet.code.App"
+    }
 }
